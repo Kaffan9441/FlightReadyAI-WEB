@@ -64,7 +64,7 @@ export function EmailForm({ className }: EmailFormProps) {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              className="flex-1 h-12 px-5 rounded-[14px] glass bg-glass-white text-text-primary placeholder:text-text-tertiary border border-glass-border focus:border-sky-500 focus:outline-none focus:shadow-[0_0_20px_rgba(0,122,255,0.15)] transition-all text-sm"
+              className="flex-1 h-12 px-5 rounded-[14px] glass bg-glass-white text-text-primary placeholder:text-text-tertiary border border-glass-border focus:border-sky-500 focus:outline-none focus:shadow-[0_0_20px_rgba(0,122,255,0.15)] transition-all text-base appearance-none"
             />
             <RainbowButton
               type="submit"

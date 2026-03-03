@@ -19,7 +19,11 @@ const stats = [
 ];
 
 export function GlobeSection() {
-  const [globeSize, setGlobeSize] = useState(420);
+  const [globeSize, setGlobeSize] = useState(() => {
+    if (typeof window === "undefined") return 420;
+    const w = window.innerWidth;
+    return w < 640 ? Math.min(w - 48, 300) : 420;
+  });
 
   useEffect(() => {
     const update = () => {

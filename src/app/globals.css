@@ -87,6 +87,10 @@
   to { transform: rotate(360deg); }
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background: var(--color-navy-950);
   color: var(--color-text-primary);
@@ -94,6 +98,15 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent iOS from overriding input styling and auto-zooming (font-size must be ≥16px) */
+input[type="email"],
+input[type="text"],
+input[type="search"] {
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 16px;
 }
 
 .glass {
