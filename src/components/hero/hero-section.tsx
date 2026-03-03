@@ -128,7 +128,7 @@ export function HeroSection() {
   return (
     <>
       {/* ── ABOVE-FOLD: Sparkles + Editorial headline ── */}
-      <section className="relative min-h-[100svh] bg-black flex flex-col items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen bg-black flex flex-col items-center justify-center overflow-x-hidden">
         {/* CSS starfield — zero JS, pure SVG */}
         <svg
           className="absolute inset-0 w-full h-full pointer-events-none"
@@ -159,7 +159,7 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_40%_at_50%_-10%,rgba(0,122,255,0.10),transparent)] pointer-events-none" />
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mx-auto">
+        <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mx-auto pt-20 pb-10 [@media(max-height:600px)]:pt-16 [@media(max-height:600px)]:pb-6">
           {/* Eyebrow */}
           <motion.p
             initial={{ opacity: 0, y: 16 }}
