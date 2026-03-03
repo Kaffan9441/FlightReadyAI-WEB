@@ -20,7 +20,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "FlightReadyAI: Preflight. Done right.",
   description:
-    "Your Pilot AI for smarter preflights. Checklists, briefings, and weight & balance built for the cockpit. Join the beta.",
+    "Your Pilot AI for every phase of flight. Checklists, emergency procedures, weight & balance, and post-flight logbook — built for the cockpit. Join the beta.",
   keywords: [
     "aviation",
     "pre-flight checklist",
@@ -28,12 +28,14 @@ export const metadata: Metadata = {
     "general aviation",
     "pilot app",
     "flight safety",
+    "emergency procedures",
+    "flight logbook",
     "iPad",
   ],
   openGraph: {
     title: "FlightReadyAI: Preflight. Done right.",
     description:
-      "Your Pilot AI for smarter preflights. Checklists, briefings, and weight & balance built for the cockpit.",
+      "Your Pilot AI for every phase of flight. Checklists, emergency procedures, weight & balance, and post-flight logbook — built for the cockpit.",
     type: "website",
   },
 };

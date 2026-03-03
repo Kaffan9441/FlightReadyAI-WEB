@@ -201,9 +201,9 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="text-white/35 text-lg md:text-xl max-w-xs leading-relaxed mb-10 [@media(max-height:600px)]:mb-4 [@media(max-height:600px)]:text-base"
           >
-            Your Pilot AI for smarter preflights.
+            Your Pilot AI — from preflight checks
             <br />
-            Built for the cockpit.
+            to post-flight logs.
           </motion.p>
 
           {/* Email form */}

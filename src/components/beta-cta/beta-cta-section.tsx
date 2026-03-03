@@ -37,7 +37,7 @@ export function BetaCTASection() {
           className="text-base md:text-lg text-text-secondary max-w-[500px] mx-auto mb-8 leading-relaxed"
         >
           FlightReadyAI is currently in beta for iOS. Get early access and help
-          shape the future of preflight.
+          shape the future of flight — from preflight checks to post-flight logs.
         </motion.p>
 
         <motion.div variants={fadeInUp} className="flex justify-center mb-6">

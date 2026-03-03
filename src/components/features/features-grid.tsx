@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Scale, Users, Plane } from "lucide-react";
+import { Scale, AlertTriangle, Plane } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
@@ -203,54 +203,38 @@ export function FeaturesGrid() {
           </CardContent>
         </Card>
 
-        {/* Card 5 — Beta Community */}
+        {/* Card 5 — Emergency Procedures */}
         <Card className="col-span-full overflow-hidden lg:col-span-3">
           <GlowingEffect spread={40} glow={false} disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-          <CardContent className="grid h-full pt-6 sm:grid-cols-2">
+          <CardContent className="grid pt-6 sm:grid-cols-2">
             <div className="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">
-              <div className="relative flex aspect-square size-12 rounded-full border border-white/10 before:absolute before:-inset-2 before:rounded-full before:border before:border-white/5">
-                <Users className="m-auto size-5" strokeWidth={1} />
+              <div className="relative flex aspect-square size-12 rounded-full border border-alert/20 before:absolute before:-inset-2 before:rounded-full before:border before:border-alert/10">
+                <AlertTriangle className="m-auto size-5 text-alert" strokeWidth={1} />
               </div>
               <div className="space-y-2">
-                <h2 className="text-lg font-medium">Growing beta community</h2>
+                <h2 className="text-lg font-medium">Emergency Procedures</h2>
                 <p className="text-white/60">
-                  150+ pilots already flying smarter. Free during beta — no
-                  credit card required.
+                  Memory items and follow-up steps for every emergency — accessible in one tap, always up to date.
                 </p>
               </div>
             </div>
-            <div className="relative mt-6 before:absolute before:inset-0 before:mx-auto before:w-px before:bg-white/[0.08] sm:-my-6 sm:-mr-6">
-              <div className="relative flex h-full flex-col justify-center space-y-6 py-6">
-                {PILOTS.map((pilot, i) => (
-                  <div
-                    key={i}
-                    className={`relative flex items-center gap-2 ${
-                      i % 2 === 0
-                        ? "w-[calc(50%+0.875rem)] justify-end"
-                        : "ml-[calc(50%-1rem)]"
-                    }`}
-                  >
-                    {i % 2 === 0 && (
-                      <span className="block h-fit rounded border border-white/[0.08] px-2 py-1 text-xs text-white/60">
-                        {pilot.name}
-                      </span>
-                    )}
-                    <div className="ring-[#050D17] size-7 ring-4 rounded-full shrink-0">
-                      <div
-                        className="size-full rounded-full flex items-center justify-center text-[10px] font-semibold text-white"
-                        style={{ backgroundColor: pilot.color + "33", border: `1px solid ${pilot.color}55` }}
-                      >
-                        {pilot.initials}
-                      </div>
-                    </div>
-                    {i % 2 !== 0 && (
-                      <span className="block h-fit rounded border border-white/[0.08] px-2 py-1 text-xs text-white/60">
-                        {pilot.name}
-                      </span>
-                    )}
+            <div className="rounded-tl-xl relative -mb-6 -mr-6 mt-6 h-fit border-l border-t border-alert/[0.08] p-6 sm:ml-6">
+              <p className="text-[10px] text-alert/70 uppercase tracking-widest mb-3 font-bold">
+                Engine Failure — After T/O
+              </p>
+              <ol className="space-y-2">
+                {[
+                  "Airspeed: 65 KIAS best glide",
+                  "Mixture: Idle cutoff",
+                  "Fuel selector: OFF",
+                  "Ignition: OFF",
+                ].map((step, i) => (
+                  <div key={i} className="flex items-start gap-2 text-[11px]">
+                    <span className="text-alert font-bold shrink-0">{i + 1}.</span>
+                    <span className="text-white/70">{step}</span>
                   </div>
                 ))}
-              </div>
+              </ol>
             </div>
           </CardContent>
         </Card>

@@ -5,10 +5,9 @@ import { motion, useInView } from "framer-motion";
 import { DeviceFrame } from "@/components/ui/device-frame";
 
 const STATIONS = [
-  { name: "Pilot & Front Pax", arm: "37.0 in", weight: "340", max: "400" },
-  { name: "Rear Passengers", arm: "73.0 in", weight: "0", max: "400" },
-  { name: "Fuel (38 gal)", arm: "48.0 in", weight: "228", max: "318", isFuel: true },
-  { name: "Baggage Area 1", arm: "95.0 in", weight: "25", max: "120" },
+  { name: "Pilot & Front Pax", weight: "340 lbs", ok: true },
+  { name: "Fuel (38 gal)", weight: "228 lbs", ok: true, isFuel: true },
+  { name: "Baggage Area 1", weight: "25 lbs", ok: true },
 ];
 
 // CG envelope polygon — realistic C172S Normal Category
@@ -40,7 +39,7 @@ const envelopePath = ENVELOPE_POINTS
   .map((p, i) => `${i === 0 ? "M" : "L"} ${mapCG(p.cg).toFixed(1)},${mapWT(p.wt).toFixed(1)}`)
   .join(" ") + " Z";
 
-// Simulated data points
+// Simulated data points — match real app values
 const takeoffPoint = { cg: 40.2, wt: 1985 };
 const landingPoint = { cg: 39.8, wt: 1850 };
 
@@ -97,7 +96,7 @@ export function WeightBalanceMockup() {
                     strokeWidth="0.5"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 0.5 }}
-                    transition={{ delay: 0.8 + i * 0.05 }}
+                    transition={{ delay: 0.1 + i * 0.03 }}
                   />
                 ))}
                 {isInView && [35, 38, 41, 44, 47].map((cg, i) => (
@@ -111,11 +110,11 @@ export function WeightBalanceMockup() {
                     strokeWidth="0.5"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 0.5 }}
-                    transition={{ delay: 0.8 + i * 0.05 }}
+                    transition={{ delay: 0.1 + i * 0.03 }}
                   />
                 ))}
 
-                {/* Envelope polygon — green 15% fill, green 60% stroke, 2px width */}
+                {/* Envelope polygon */}
                 {isInView && (
                   <motion.path
                     d={envelopePath}
@@ -124,7 +123,7 @@ export function WeightBalanceMockup() {
                     strokeWidth="2"
                     initial={{ pathLength: 0, fillOpacity: 0 }}
                     animate={{ pathLength: 1, fillOpacity: 1 }}
-                    transition={{ duration: 1.0, ease: "easeInOut" }}
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
                   />
                 )}
 
@@ -140,16 +139,16 @@ export function WeightBalanceMockup() {
                     strokeDasharray="4 3"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 1.6, duration: 0.3 }}
+                    transition={{ delay: 0.7, duration: 0.3 }}
                   />
                 )}
 
-                {/* Takeoff point — 12x12 green dot */}
+                {/* Takeoff point */}
                 {isInView && (
                   <motion.g
-                    initial={{ opacity: 0, y: -20 }}
+                    initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.2, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ delay: 0.5, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                   >
                     <circle
                       cx={mapCG(takeoffPoint.cg)}
@@ -170,12 +169,12 @@ export function WeightBalanceMockup() {
                   </motion.g>
                 )}
 
-                {/* Landing point — 10x10 blue dot */}
+                {/* Landing point */}
                 {isInView && (
                   <motion.g
-                    initial={{ opacity: 0, y: -15 }}
+                    initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.5, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ delay: 0.65, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                   >
                     <circle
                       cx={mapCG(landingPoint.cg)}
@@ -207,7 +206,7 @@ export function WeightBalanceMockup() {
             </div>
           </div>
 
-          {/* Station rows — matching WBStationRow.swift */}
+          {/* Station rows */}
           <div className="flex-1 overflow-hidden px-4 py-3 space-y-[10px]">
             <p className="text-[10px] font-bold tracking-[1px] text-[#8899AA] uppercase">
               Loading Stations
@@ -216,39 +215,37 @@ export function WeightBalanceMockup() {
               <motion.div
                 key={i}
                 className="flex items-center gap-3 bg-[#1C2A3A] border border-[#354555] rounded-xl px-3 py-[10px]"
-                initial={{ opacity: 0, y: 8 }}
+                initial={{ opacity: 0, y: 6 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 1.8 + i * 0.12 }}
+                transition={{ delay: 0.3 + i * 0.08 }}
               >
-                {/* Station info */}
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-1.5">
-                    {station.isFuel && (
-                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                        <path d="M3 8V3a1 1 0 011-1h2a1 1 0 011 1v5" stroke="#FFD60A" strokeWidth="1" strokeLinecap="round"/>
-                        <path d="M2 8h6" stroke="#FFD60A" strokeWidth="1" strokeLinecap="round"/>
-                      </svg>
-                    )}
-                    <p className="text-[13px] font-semibold text-white">{station.name}</p>
-                  </div>
-                  <p className="text-[11px] text-[#8899AA]">Arm: {station.arm}</p>
+                <div className="flex items-center gap-1.5 flex-1">
+                  {station.isFuel && (
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                      <path d="M3 8V3a1 1 0 011-1h2a1 1 0 011 1v5" stroke="#FFD60A" strokeWidth="1" strokeLinecap="round"/>
+                      <path d="M2 8h6" stroke="#FFD60A" strokeWidth="1" strokeLinecap="round"/>
+                    </svg>
+                  )}
+                  <p className="text-[13px] font-semibold text-white">{station.name}</p>
                 </div>
-                {/* Weight input display */}
-                <div className="flex items-center gap-1">
-                  <span className="text-[15px] font-medium text-white">{station.weight}</span>
-                  <span className="text-[12px] font-medium text-[#8899AA]">lbs</span>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[13px] font-medium text-white">{station.weight}</span>
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                    <circle cx="5" cy="5" r="4.5" stroke="#30D158" strokeWidth="1"/>
+                    <path d="M3 5l1.5 1.5L7 4" stroke="#30D158" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          {/* Results card — matching WBResultsCard.swift */}
+          {/* Results card */}
           <div className="px-4 pb-3">
             <motion.div
               className="bg-[#1C2A3A] border-[1.5px] border-[#30D158]/40 rounded-2xl px-4 py-3"
               initial={{ opacity: 0, scale: 0.97 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: 2.4, duration: 0.3 }}
+              transition={{ delay: 0.55, duration: 0.3 }}
             >
               <div className="flex items-center justify-between mb-2">
                 <p className="text-[10px] font-bold tracking-[1px] text-[#8899AA] uppercase">

@@ -59,14 +59,14 @@ export function CopilotShowcase() {
               </Badge>
 
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60 leading-[1.15] mb-4">
-                Your smartest
+                Answers when
                 <br />
-                crew member.
+                it counts.
               </h3>
 
               <p className="text-text-secondary max-w-md leading-relaxed mb-8">
-                Ask about weather, NOTAMs, weight limits, or emergency procedures.
-                Powered by Gemini 2.5 Flash with your aircraft&apos;s POH as context.
+                Ask about weather, NOTAMs, emergency procedures, or weight limits.
+                Pilot AI draws from your aircraft&apos;s POH to give safety-first answers — spoken back through your headset.
               </p>
 
               {/* Capability cards */}

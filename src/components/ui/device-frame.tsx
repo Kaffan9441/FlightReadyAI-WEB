@@ -39,7 +39,7 @@ export function DeviceFrame({
   return (
     <div
       className={cn(
-        "relative w-full max-w-[800px] aspect-[3/4] sm:aspect-[4/3] rounded-[18px] border-[3px] border-white/12 bg-navy-900 p-[3px]",
+        "relative w-full max-w-[480px] aspect-[3/4] rounded-[18px] border-[3px] border-white/12 bg-navy-900 p-[3px]",
         className
       )}
     >
