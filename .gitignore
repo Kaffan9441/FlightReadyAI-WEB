@@ -39,3 +39,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI tooling / local dev
+.claude/
+.mcp.json
+.playwright-mcp/
+memory/
+_inspiration/
+_screenshots/
+_screenshot-*.mjs
+
+# Reference screenshots
+*.png
