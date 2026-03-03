@@ -175,8 +175,8 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-bold text-white leading-[0.88] tracking-[-0.03em]"
-            style={{ fontSize: "clamp(44px, min(12vw, 16vh), 148px)" }}
+            className="font-bold text-white leading-[0.92] tracking-[-0.015em]"
+            style={{ fontSize: "clamp(44px, min(10vw, 14vh), 120px)" }}
           >
             Preflight.
             <br />

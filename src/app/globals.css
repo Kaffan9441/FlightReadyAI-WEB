@@ -106,7 +106,7 @@ input[type="search"] {
   background-color: #162638 !important;
   color: white !important;
   -webkit-text-fill-color: white !important;
-  border-radius: 9999px;
+  border-radius: 9999px !important;
   /* iOS inset-shadow trick: overrides native inner glow, autofill yellow, and system border */
   -webkit-box-shadow: 0 0 0 100px #162638 inset !important;
   box-shadow: 0 0 0 100px #162638 inset !important;
