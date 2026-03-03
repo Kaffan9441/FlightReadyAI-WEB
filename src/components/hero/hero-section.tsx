@@ -128,7 +128,7 @@ export function HeroSection() {
   return (
     <>
       {/* ── ABOVE-FOLD: Sparkles + Editorial headline ── */}
-      <section className="relative min-h-screen bg-black flex flex-col items-center justify-center overflow-hidden">
+      <section className="relative min-h-[100svh] bg-black flex flex-col items-center justify-center overflow-hidden">
         {/* CSS starfield — zero JS, pure SVG */}
         <svg
           className="absolute inset-0 w-full h-full pointer-events-none"
@@ -165,7 +165,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[11px] text-white/25 uppercase tracking-[0.3em] font-medium mb-12"
+            className="text-[11px] text-white/25 uppercase tracking-[0.3em] font-medium mb-12 [@media(max-height:600px)]:mb-4"
           >
             iOS · Early Access
           </motion.p>
@@ -176,7 +176,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="font-bold text-white leading-[0.88] tracking-[-0.03em]"
-            style={{ fontSize: "clamp(44px, 12vw, 148px)" }}
+            style={{ fontSize: "clamp(44px, min(12vw, 16vh), 148px)" }}
           >
             Preflight.
             <br />
@@ -188,7 +188,7 @@ export function HeroSection() {
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="relative mt-8 mb-8 w-full max-w-md h-px"
+            className="relative mt-8 mb-8 [@media(max-height:600px)]:mt-3 [@media(max-height:600px)]:mb-3 w-full max-w-md h-px"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#007AFF]/60 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#007AFF]/30 to-transparent blur-sm" />
@@ -199,7 +199,7 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-white/35 text-lg md:text-xl max-w-xs leading-relaxed mb-10"
+            className="text-white/35 text-lg md:text-xl max-w-xs leading-relaxed mb-10 [@media(max-height:600px)]:mb-4 [@media(max-height:600px)]:text-base"
           >
             Your Pilot AI for smarter preflights.
             <br />

@@ -36,7 +36,7 @@ export function EmailForm({ className }: EmailFormProps) {
   };
 
   return (
-    <div className={cn("w-full max-w-md", className)}>
+    <div className={cn("w-full max-w-lg", className)}>
       <AnimatePresence mode="wait">
         {status === "success" ? (
           <motion.div
@@ -63,13 +63,13 @@ export function EmailForm({ className }: EmailFormProps) {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
-              className="flex-1 h-12 px-5 rounded-[14px] bg-[#0F1E2E] text-white placeholder:text-white/40 border border-white/10 focus:border-sky-500 focus:outline-none focus:shadow-[0_0_20px_rgba(0,122,255,0.15)] transition-all text-base appearance-none"
+              placeholder="Enter your email address"
+              className="flex-1 h-14 px-6 rounded-2xl bg-[#0F1E2E] text-white placeholder:text-white/35 border border-white/20 focus:border-sky-500 focus:outline-none focus:shadow-[0_0_24px_rgba(0,122,255,0.2)] transition-all text-base appearance-none"
             />
             <RainbowButton
               type="submit"
               disabled={status === "loading"}
-              className="h-12 px-6 text-sm font-semibold whitespace-nowrap disabled:opacity-70"
+              className="h-14 px-8 text-base font-semibold whitespace-nowrap disabled:opacity-70"
             >
               {status === "loading" ? (
                 <Loader2 className="w-4 h-4 animate-spin mx-auto" />
