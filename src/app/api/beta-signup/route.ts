@@ -1,11 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-const FROM = process.env.FROM_EMAIL ?? "FlightReady AI <onboarding@resend.dev>";
-const NOTIFY = process.env.NOTIFY_EMAIL!;
-
 function welcomeHtml(email: string) {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -75,6 +70,10 @@ function welcomeHtml(email: string) {
 }
 
 export async function POST(request: NextRequest) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
+  const FROM = process.env.FROM_EMAIL ?? "FlightReady AI <onboarding@resend.dev>";
+  const NOTIFY = process.env.NOTIFY_EMAIL!;
+
   try {
     const { email } = await request.json();
 
