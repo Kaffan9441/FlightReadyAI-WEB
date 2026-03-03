@@ -128,7 +128,7 @@ export function BentoGrid() {
             </div>
             <div className="space-y-2">
               {[
-                { label: "Voice Input", desc: "Ask Co-Pilot anything hands-free" },
+                { label: "Voice Input", desc: "Ask Pilot AI anything hands-free" },
                 { label: "TTS Readback", desc: "Hear AI responses through your headset" },
                 { label: "6 Voice Profiles", desc: "Choose from OpenAI premium voices" },
               ].map((item, i) => (

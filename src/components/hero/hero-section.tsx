@@ -176,7 +176,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="font-bold text-white leading-[0.88] tracking-[-0.03em]"
-            style={{ fontSize: "clamp(72px, 12vw, 148px)" }}
+            style={{ fontSize: "clamp(44px, 12vw, 148px)" }}
           >
             Preflight.
             <br />
@@ -201,7 +201,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="text-white/35 text-lg md:text-xl max-w-xs leading-relaxed mb-10"
           >
-            The AI co-pilot for your preflight.
+            Your Pilot AI for smarter preflights.
             <br />
             Built for the cockpit.
           </motion.p>

@@ -18,7 +18,7 @@ export function SectionWrapper({ children, id, className }: SectionWrapperProps)
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className={cn("py-24 md:py-40 px-6 max-w-[1200px] mx-auto", className)}
+      className={cn("py-16 md:py-40 px-6 max-w-[1200px] mx-auto", className)}
     >
       {children}
     </motion.section>

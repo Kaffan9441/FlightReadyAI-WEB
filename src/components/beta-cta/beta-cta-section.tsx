@@ -47,7 +47,7 @@ export function BetaCTASection() {
         {/* Trust signals */}
         <motion.div
           variants={fadeInUp}
-          className="flex items-center justify-center gap-6 text-xs text-text-tertiary"
+          className="flex flex-wrap items-center justify-center gap-4 text-xs text-text-tertiary"
         >
           <div className="flex items-center gap-1.5">
             <svg

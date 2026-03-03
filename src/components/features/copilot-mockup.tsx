@@ -50,7 +50,7 @@ export function CopilotMockup() {
           {/* Header - matching CoPilotChatView */}
           <div className="px-6 pt-4 pb-3 border-b border-[#354555]">
             <p className="text-[10px] font-medium tracking-[1.5px] text-[#8899AA] uppercase">
-              Co-Pilot AI
+              Pilot AI
             </p>
             <div className="flex items-center justify-between mt-1">
               <h2 className="text-[22px] font-semibold">Your Pilot AI</h2>
@@ -137,7 +137,7 @@ export function CopilotMockup() {
                   <div className="flex items-center gap-1.5 mb-2">
                     <Sparkles className="w-3 h-3 text-[#007AFF]" />
                     <span className="text-[11px] font-medium text-[#8899AA]">
-                      Gemini AI
+                      Pilot AI
                     </span>
                   </div>
                   {/* Response text */}

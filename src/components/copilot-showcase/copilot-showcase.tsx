@@ -35,12 +35,12 @@ export function CopilotShowcase() {
           Powered by Gemini 2.5 Flash
         </p>
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-          Meet your AI Co-Pilot.
+          Meet your Pilot AI.
         </h2>
       </motion.div>
 
       <motion.div variants={fadeInUp}>
-        <div className="w-full min-h-[500px] md:min-h-[600px] relative">
+        <div className="w-full min-h-[400px] md:min-h-[600px] relative">
           {/* Background card — rounded with glass border, but NO overflow-hidden */}
           <div className="absolute inset-0 bg-navy-900/80 border border-glass-border rounded-[24px]" />
           <Spotlight
@@ -48,9 +48,9 @@ export function CopilotShowcase() {
             fill="#007AFF"
           />
 
-          <div className="relative flex flex-col md:flex-row h-full min-h-[500px] md:min-h-[600px]">
+          <div className="relative flex flex-col md:flex-row h-full min-h-[400px] md:min-h-[600px]">
             {/* Left content */}
-            <div className="flex-1 p-8 md:p-12 lg:p-16 relative z-10 flex flex-col justify-center">
+            <div className="flex-1 p-6 md:p-12 lg:p-16 relative z-10 flex flex-col justify-center">
               <Badge
                 icon={<Sparkles className="w-3 h-3 text-sky-400" />}
                 className="mb-6 w-fit"
@@ -95,7 +95,7 @@ export function CopilotShowcase() {
             </div>
 
             {/* Right — 3D Spline scene, overflow visible so robot arms extend freely */}
-            <div className="flex-1 relative min-h-[300px] md:min-h-0 overflow-visible">
+            <div className="flex-1 relative min-h-[240px] max-h-[300px] md:max-h-none md:min-h-0 overflow-hidden md:overflow-visible">
               <SplineScene
                 scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
                 className="w-full h-full"

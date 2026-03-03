@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { fadeInUp, slideInLeft, slideInRight } from "@/lib/animations";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
@@ -18,6 +19,18 @@ const stats = [
 ];
 
 export function GlobeSection() {
+  const [globeSize, setGlobeSize] = useState(420);
+
+  useEffect(() => {
+    const update = () => {
+      const w = window.innerWidth;
+      setGlobeSize(w < 640 ? Math.min(w - 48, 300) : 420);
+    };
+    update();
+    window.addEventListener("resize", update, { passive: true });
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
   return (
     <SectionWrapper>
       <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
@@ -59,7 +72,7 @@ export function GlobeSection() {
           className="w-full lg:w-1/2 flex items-center justify-center"
         >
           <InteractiveGlobe
-            size={420}
+            size={globeSize}
             markers={GLOBE_AIRPORTS}
             connections={GLOBE_ROUTES}
             dotColor="rgba(0, 122, 255, ALPHA)"

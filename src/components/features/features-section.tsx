@@ -24,7 +24,7 @@ const features = [
     mockup: <ChecklistMockup />,
   },
   {
-    badge: { icon: <Sparkles className="w-3 h-3" />, label: "AI Co-Pilot" },
+    badge: { icon: <Sparkles className="w-3 h-3" />, label: "Pilot AI" },
     headline: "Briefings that actually brief.",
     description:
       "Ask any question about weather, NOTAMs, airspace, or regulations. Powered by Gemini 2.5 Flash, trained to think like a flight instructor.",
@@ -39,7 +39,7 @@ const features = [
     badge: { icon: <Volume2 className="w-3 h-3" />, label: "Audio Readback" },
     headline: "Hear every challenge. Loud and clear.",
     description:
-      "Your AI Co-Pilot reads checklist challenges and briefings aloud through your headset. Choose from 6 premium OpenAI TTS voices. Keep your eyes on the aircraft — not the screen.",
+      "Pilot AI reads checklist challenges and briefings aloud through your headset. Choose from 6 premium OpenAI TTS voices. Keep your eyes on the aircraft — not the screen.",
     bullets: [
       "TTS readback for every checklist challenge",
       "6 premium OpenAI voice profiles",
@@ -75,7 +75,7 @@ export function FeaturesSection() {
           <p className="text-xs text-[#007AFF] uppercase tracking-[0.2em] font-medium mb-5">
             Features
           </p>
-          <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[0.9] text-white">
+          <h2 className="text-4xl md:text-7xl font-bold tracking-tight leading-[0.9] text-white">
             Built for
             <br />
             the cockpit.
@@ -90,12 +90,12 @@ export function FeaturesSection() {
         return (
           <div
             key={i}
-            className="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28 border-t border-white/[0.05]"
+            className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-28 border-t border-white/[0.05]"
           >
             <div
               className={`flex flex-col ${
                 isReversed ? "md:flex-row-reverse" : "md:flex-row"
-              } items-center gap-16 md:gap-24`}
+              } items-center gap-8 md:gap-24`}
             >
               {/* Mockup */}
               <motion.div
@@ -122,7 +122,7 @@ export function FeaturesSection() {
                 </p>
 
                 {/* Headline — Dropset-sized */}
-                <h3 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.0] text-white">
+                <h3 className="text-2xl md:text-5xl font-bold tracking-tight leading-[1.1] text-white">
                   {feature.headline}
                 </h3>
 
